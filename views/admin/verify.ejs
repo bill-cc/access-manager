@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no"/>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/weui.css"/>
+  </head>
+  <body ontouchstart>
+    <!-- container START -->
+    <div class="container">
+      <!-- Page head -->
+      <div class="page__hd">
+        <h1 class="page__title">审核</h1>
+        <p class="page__desc">需要对如下用户信息进行审核确认。</p>
+      </div>
+      <div class="page__bd">
+        <!-- 使用 -->
+        <div class="weui-form-preview">
+          <div class="weui-form-preview__hd">
+              <label class="weui-form-preview__label">用户信息</label>
+              <em class="weui-form-preview__value"><%= status %></em>
+          </div>
+          <div class="weui-form-preview__bd">
+              <div class="weui-form-preview__item">
+                  <label class="weui-form-preview__label">用户姓名</label>
+                  <span class="weui-form-preview__value"><%= userName %></span>
+              </div>
+              <div class="weui-form-preview__item">
+                  <label class="weui-form-preview__label">用户电话</label>
+                  <span class="weui-form-preview__value"><%= userPhone %></span>
+              </div>
+              <div class="weui-form-preview__item">
+                  <label class="weui-form-preview__label">身份证号</label>
+                  <span class="weui-form-preview__value"><%= identifyCard %></span>
+              </div>
+          </div>
+          <div class="weui-form-preview__ft">
+              <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="/admin/accept?status=1&userId=<%= userId %>&userName=<%= userName %>&loginName=<%= loginName %>&token=<%= userToken %>">通过</a>
+              <a class="weui-form-preview__btn" style="color: red;" href="/admin/accept?status=0&userId=<%= userId %>&userName=<%= userName %>&loginName=<%= loginName %>&token=<%= userToken %>">禁止</a>
+          </div>
+        </div>
+      </div>
+      <!-- Page footer -->
+      <div class="weui-footer weui-footer_fixed-bottom">
+        <p class="weui-footer__links">
+            <a href="/" class="weui-footer__link">认证系统首页</a>
+        </p>
+        <p class="weui-footer__text" style="color: #1485ee;">Copyright © Bill</p>
+      </div>
+    </div>
+    <!-- container END -->
+    <script type="text/javascript">
+      window.onpageshow = function(event){
+          if (event.persisted) {  
+              window.location.reload();
+          }
+      }
+    </script>
+  </body>
+</html>

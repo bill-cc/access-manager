@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no"/>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/weui.css"/>
+  </head>
+  <body ontouchstart>
+    <!-- container START -->
+    <div class="container">
+      <!-- Page head -->
+      <div class="page__hd">
+        <h1 class="page__title">申请列表</h1>
+        <p class="page__desc">所有申请信息列表，点击可查看用户详细信息。</p>
+      </div>
+      <div class="page__bd">
+        <!-- 使用 -->
+        <div class="weui-cells">
+          <% for (let i=0; i < userList.length; i++) { %>
+          <a class="weui-cell  weui-cell_access" href="/admin/apply/info?loginName=<%= userList[i].login_name %>">
+              <div class="weui-cell__bd">
+                  <p><%= userList[i].user_name %></p>
+              </div>
+              <div class="weui-cell__ft">查看详情</div>
+          </a>
+          <% } %>
+        </div>
+        <a href="/admin" class="weui-btn weui-btn_primary" style="width: 80%; top: 20px;">返回</a>
+      </div>
+      <!-- Page footer -->
+      <div class="weui-footer weui-footer_fixed-bottom">
+        <p class="weui-footer__links">
+            <a href="/" class="weui-footer__link">认证系统首页</a>
+        </p>
+        <p class="weui-footer__text" style="color: #1485ee;">Copyright © Bill</p>
+      </div>
+    </div>
+    <!-- container END -->
+    <script type="text/javascript">
+      window.onpageshow = function(event){
+          if (event.persisted) {  
+              window.location.reload();
+          }
+      }
+    </script>
+  </body>
+</html>

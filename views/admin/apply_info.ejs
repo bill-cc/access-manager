@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no"/>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/weui.css"/>
+  </head>
+  <body ontouchstart>
+    <!-- container START -->
+    <div class="container">
+      <!-- Page head -->
+      <div class="page__hd">
+        <h1 class="page__title">用户申请信息</h1>
+        <p class="page__desc">列出申请注册的用户详细信息，管理员进行审核。</p>
+      </div>
+      <div class="page__bd">
+        <!-- 使用 -->
+        <div class="weui-form-preview">
+          <div class="weui-form-preview__hd">
+              <label class="weui-form-preview__label">用户信息</label>
+              <em class="weui-form-preview__value"><%= applyStatus %></em>
+          </div>
+          <div class="weui-form-preview__bd">
+              <div class="weui-form-preview__item">
+                  <label class="weui-form-preview__label">姓名</label>
+                  <span class="weui-form-preview__value"><%= userName %></span>
+              </div>
+              <div class="weui-form-preview__item">
+                <label class="weui-form-preview__label">性别</label>
+                <span class="weui-form-preview__value"><%= userSex %></span>
+              </div>
+              <div class="weui-form-preview__item">
+                  <label class="weui-form-preview__label">电话</label>
+                  <span class="weui-form-preview__value"><%= userPhone %></span>
+              </div>
+              <div class="weui-form-preview__item">
+                  <label class="weui-form-preview__label">身份证号</label>
+                  <span class="weui-form-preview__value"><%= identifyCard %></span>
+              </div>
+              <div class="weui-form-preview__item">
+                <label class="weui-form-preview__label">注册时间</label>
+                <span class="weui-form-preview__value"><%= createTime %></span>
+              </div>
+          </div>
+          <div class="weui-form-preview__ft">
+              <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="/admin/apply/status?loginName=<%= loginName %>">通过</a>
+              <!--<a class="weui-form-preview__btn" style="color: red;" href="/admin/user/statue?status=0&loginName=<%= loginName %>">拒绝</a>-->
+              <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="/admin/apply">返回</a>
+          </div>
+        </div>
+      </div>
+      <!-- Page footer -->
+      <div class="weui-footer weui-footer_fixed-bottom">
+        <p class="weui-footer__links">
+            <a href="/" class="weui-footer__link">认证系统首页</a>
+        </p>
+        <p class="weui-footer__text" style="color: #1485ee;">Copyright © Bill</p>
+      </div>
+    </div>
+    <!-- container END -->
+    <script type="text/javascript">
+      window.onpageshow = function(event){
+          if (event.persisted) {  
+              window.location.reload();
+          }
+      }
+    </script>
+  </body>
+</html>

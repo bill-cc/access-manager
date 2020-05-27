@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no"/>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/weui.css"/>
+  </head>
+  <body ontouchstart>
+    <!-- container START -->
+    <div class="container">
+      <!-- Page head -->
+      <div class="page__hd">
+        <h1 class="page__title">欢迎 <%= userName %> 访问</h1>
+        <p class="page__desc"></p>
+      </div>
+      <div class="page__bd">
+        <!-- 使用 -->
+        <a href="/admin/user" class="weui-btn weui-btn_primary" style="width: 80%;">人员列表</a>
+        <a href="/admin/apply" class="weui-btn weui-btn_primary" style="width: 80%;">申请列表</a>
+        <a href="/admin/access" class="weui-btn weui-btn_primary" style="width: 80%;">访问列表</a>
+        <a href="/admin/logout" class="weui-btn weui-btn_primary" style="width: 80%;">退出登录</a>
+      </div>
+      <!-- Page footer -->
+      <div class="weui-footer weui-footer_fixed-bottom">
+        <p class="weui-footer__links">
+            <a href="/" class="weui-footer__link">认证系统首页</a>
+        </p>
+        <p class="weui-footer__text" style="color: #1485ee;">Copyright © Bill</p>
+      </div>
+    </div>
+    <!-- container END -->
+    <script type="text/javascript">
+      window.onpageshow = function(event){
+          if (event.persisted) {  
+              window.location.reload();
+          }
+      }
+    </script>
+  </body>
+</html>
