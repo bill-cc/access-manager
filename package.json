@@ -15,7 +15,7 @@
     "express-session": "^1.15.6",
     "http-errors": "~1.6.3",
     "method-override": "^2.3.10",
-    "moment": "^2.22.2",
+    "moment": "^2.29.2",
     "morgan": "~1.9.1",
     "pwd": "^1.1.0",
     "qr-image": "^3.2.0",
